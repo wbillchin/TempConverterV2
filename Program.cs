@@ -7,12 +7,17 @@ using System;
 
 class TemperatureConverter
 {
+    // Function to convert Fahrenheit to Celsius
+    static double FahrenheitToCelsius(double fahrenheit)
+    {
+        return (fahrenheit - 32) * 5 / 9;
+    }
 
-    // TODO: implement function to convert fahrenheit to celsius
-
-
-    // TODO: implement function to convert celsius to fahrenheit
-
+    // Function to convert Celsius to Fahrenheit
+    static double CelsiusToFahrenheit(double celsius)
+    {
+        return (celsius * 9 / 5) + 32;
+    }
 
     // Function to display the menu and return the user's choice
     static int GetMenuChoice()
@@ -54,8 +59,8 @@ class TemperatureConverter
                     if (double.TryParse(Console.ReadLine(), out double fahrenheit))
                     {
 
-                        // TODO - implement Fahrenheit to Celsius conversion
-                        //Console.WriteLine($"{fahrenheit} Fahrenheit is {celsius:F2} Celsius.");
+                        double celsius = FahrenheitToCelsius(fahrenheit);
+                        Console.WriteLine($"{fahrenheit} Fahrenheit is {celsius:F2} Celsius.");
                     }
                     else
                     {
@@ -68,8 +73,8 @@ class TemperatureConverter
                     Console.Write("Enter temperature in Celsius: ");
                     if (double.TryParse(Console.ReadLine(), out double celsiusTemp))
                     {
-                        // TODO - implement Celsius to Fahrenheit conversion
-                        //Console.WriteLine($"{celsiusTemp} Celsius is {fahrenheitTemp:F2} Fahrenheit.");
+                        double fahrenheitTemp = CelsiusToFahrenheit(celsiusTemp);
+                        Console.WriteLine($"{celsiusTemp} Celsius is {fahrenheitTemp:F2} Fahrenheit.");
                     }
                     else
                     {
